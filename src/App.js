@@ -1,12 +1,25 @@
 
 import "./index.scss"
 
+import Intro from "./sections/intro/Intro"
+
 function App() {
   return (
     <div className="App">
-     <h1>Howdy</h1>
+
+
+      <article>
+        <Intro />
+
+
+
+
+      </article>
+
+
+
     </div>
-  );
+  )
 }
 
 export default App;
