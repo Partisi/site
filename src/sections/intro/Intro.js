@@ -2,8 +2,13 @@ import React from 'react'
 
 export default function Intro() {
     return (
-        <div>
+        <section>
             <h1>Intro Section</h1>
-        </div>
+
+
+            <div>
+                
+            </div>
+        </section>
     )
 }
