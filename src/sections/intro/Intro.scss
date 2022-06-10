@@ -1,0 +1,12 @@
+#intro-container {
+    background-color: red;
+    
+    padding-bottom: 64px;
+
+    clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% calc(100% - 64px),
+        0% 100%
+    );
+}

@@ -2,13 +2,8 @@ import React from 'react'
 
 export default function Intro() {
     return (
-        <section>
-            <h1>Intro Section</h1>
-
-
-            <div>
-                
-            </div>
+        <section id="intro-container">
+            <h1>Erol Bickici</h1>
         </section>
     )
 }
