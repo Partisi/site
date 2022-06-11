@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Work() {
-    
+
     const myEmployment = [
         {
             employer: "Coopsight",
@@ -21,8 +21,25 @@ export default function Work() {
         },
     ]
     return (
-        <div>
-            <h1>Work Section</h1>
-        </div>
+        <section id="work-container" className="section-container">
+            <h1 className="section-subtitle">Employment</h1>
+            <ul>
+                {myEmployment.map((eachEmployment, index) => {
+                    return (
+                        <li key={index}>
+                            <p className="employment-length">{eachEmployment.length}</p>
+                            <div className="top-employment">
+                                <h2><a href={eachEmployment.link}>{eachEmployment.employer}</a></h2>
+                                <p>{eachEmployment.companyDescription}</p>
+                            </div>
+                            <div className="bottom-employment">
+                                <p>{eachEmployment.title}</p>
+                                <p>{eachEmployment.jobDescription}</p>
+                            </div>
+                        </li>
+                    )
+                })}
+            </ul>
+        </section>
     )
 }

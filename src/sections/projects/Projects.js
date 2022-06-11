@@ -42,8 +42,20 @@ export default function Projects() {
     ]
 
     return (
-        <div>
-            <h1>Projects Section</h1>
-        </div>
+        <section id="projects-container" className="section-container">
+            <h1 className="section-subtitle">Projects</h1>
+            <ul>
+                {myProjects.map((eachProject, index) => {
+                    return (
+                        <li key={index}>
+                            <h2>{eachProject.name}</h2>
+                            <p>{eachProject.year}</p>
+                            <p>{eachProject.description}</p>
+                            <p>Technologies: {eachProject.toolsUsed}</p>
+                        </li>
+                    )
+                })}
+            </ul>
+        </section>
     )
 }

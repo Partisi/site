@@ -1,0 +1,27 @@
+#projects-container {
+    background-color: $primary;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        li {
+            margin: 24px;
+            box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+            background-color: $white;
+
+            border-radius: 50%;
+            width: 320px;
+            height: 320px;
+            padding: 64px;
+
+            border: 2px solid $secondaryDark;
+
+            text-align: center;
+          
+        }
+    }
+
+}

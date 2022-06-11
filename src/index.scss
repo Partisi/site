@@ -1,3 +1,4 @@
+// General Use
 $primary: #98C1D9;
 $secondary: #533A7B;
 $secondaryLight: #6969B3;
@@ -15,7 +16,7 @@ $black: black;
 @import './sections/contact/Contact.scss';
 
 body {
-    background-color: $white;
+    background-color: $dark;
     margin: 0;
 }
 
@@ -31,4 +32,20 @@ h1,h2,h3,h4,h5,h6 {
 
 p {
     font-family: 'Libre Baskerville', serif;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.section-container {
+    padding: 258px 257px;
+
+    .section-subtitle {
+        text-align: center;
+        font-size: 48px;
+        padding-bottom: 24px;
+    }
 }

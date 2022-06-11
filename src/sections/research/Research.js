@@ -39,18 +39,19 @@ export default function Research() {
 
 
     return (
-        <div>
+        <section id="research-container" className="section-container">
             <h1>Research Section</h1>
-
-            {reports.map((eachReport, index) => {
-                return (
-                    <div key={index}>
-                        <p>{eachReport.title}</p>
-                        <p>{eachReport.year}</p>
-                        <p>{eachReport.description}</p>
-                    </div>
-                )
-            })}
-        </div>
+            <ul>
+                {reports.map((eachReport, index) => {
+                    return (
+                        <li key={index}>
+                            <p>{eachReport.title}</p>
+                            <p>{eachReport.year}</p>
+                            <p>{eachReport.description}</p>
+                        </li>
+                    )
+                })}
+            </ul>
+        </section>
     )
 }

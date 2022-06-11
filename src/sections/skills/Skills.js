@@ -3,13 +3,13 @@ import React from 'react'
 export default function Skills() {
 
 
-    const categories = [
+    const mySkillCategories = [
         "frontend",
         "backend",
         "blockchain",
         "data analytics",
     ]
-    const allSkills = {
+    const mySkills = {
         "languages": [
             { key: "HTML", categories: ["frontend"] },
             { key: "CSS/SCSS/LESS", categories: ["frontend"] },
@@ -47,8 +47,8 @@ export default function Skills() {
         ],
     }
     return (
-        <div>
+        <section id="skills-container" className="section-container">
             <h1>Skills Section</h1>
-        </div>
+        </section>
     )
 }
