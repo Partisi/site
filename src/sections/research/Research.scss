@@ -1,4 +1,178 @@
 #research-container {
     color: white;
 
+    border: 2px solid black;
+
+    #inner-research-container {
+        display: flex;
+        flex-direction: row;
+
+        height: 500px;
+        overflow-y: scroll;
+
+        #report-list {
+            width: 40%;
+
+            padding: 12px;
+
+
+            li {
+                padding: 12px 24px;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+
+                color: $grey;
+
+                font-size: 16px;
+
+                transition: 0.3s;
+
+                &:hover {
+                    color: $white;
+                    cursor: pointer;
+                }
+
+                .report-year {
+                    padding-right: 8px;
+                }
+            }
+
+            li+li {
+                border-top: 1px solid grey;
+            }
+        }
+
+        #viewing-report {
+            background-color: $secondary-light;
+            border-radius: 4px;
+            width: 60%;
+
+
+            position: relative;
+
+            #report-info {
+                height: calc(100% - 48px);
+                overflow-y: scroll;
+                padding: 24px;
+
+                .report-header {
+                    color: $primary;
+
+                    .report-keywords {
+                        display: flex;
+                        flex-direction: row;
+
+                        li {
+                            padding: 4px 12px;
+                            background-color: $tert;
+                            margin: 4px;
+                            color: $white;
+                            border-radius: 4px;
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .report-description {
+                    padding-top: 24px;
+                }
+
+                .report-abstract {
+                    font-style: italic;
+                    padding-top: 12px;
+
+                    .abstract-key {
+                        font-style: normal;
+                        color: $primary;
+                    }
+                }
+
+                #bottom-buffer {
+                    height: 100px;
+                }
+
+            }
+
+
+            .redirect-bottom {
+                position: absolute;
+                bottom: 24px;
+                right: 24px;
+
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                #viewing-additional-info {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin-bottom: 8px;
+
+                    .read-additional-bttn {
+                        border: none;
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: row;
+                        align-items: center;
+                        padding: 6px 16px;
+                        margin-left: 6px;
+                        border-radius: 4px;
+
+                        background-color: $grey;
+                        color: $white;
+
+                        &:hover {
+                            cursor: pointer;
+                            opacity: 0.8;
+                        }
+
+                        .redirect-read-icon {
+                            font-size: 24px;
+                        }
+
+                    }
+                }
+
+                .read-report-bttn {
+                    padding: 8px 24px;
+                    border: none;
+                    background-color: $primary;
+                    color: $white;
+                    border-radius: 4px;
+                    font-size: 16px;
+
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: row;
+                    align-items: center;
+
+                    &:hover {
+                        cursor: pointer;
+                        opacity: 0.8;
+                    }
+
+                    .redirect-read-icon {
+                        font-size: 24px;
+                    }
+
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    #research-container {
+
+        #inner-research-container {
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
 }

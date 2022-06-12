@@ -27,7 +27,7 @@ export default function Work() {
                 {myEmployment.map((eachEmployment, index) => {
                     return (
                         <li key={index}>
-                            <p className="employment-length">{eachEmployment.length}</p>
+                            <p className="time-length">{eachEmployment.length}</p>
                             <div className="top-employment">
                                 <h2><a href={eachEmployment.link}>{eachEmployment.employer}</a></h2>
                                 <p>{eachEmployment.companyDescription}</p>

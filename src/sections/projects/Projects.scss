@@ -1,5 +1,4 @@
 #projects-container {
-    background-color: $primary;
 
     ul {
         display: flex;
@@ -8,19 +7,80 @@
         justify-content: center;
 
         li {
-            margin: 24px;
-            box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
-            background-color: $white;
 
-            border-radius: 50%;
-            width: 320px;
+            width: 400px;
             height: 320px;
-            padding: 64px;
 
-            border: 2px solid $secondaryDark;
+            margin: 32px;
+            border-radius: 12px;
+            padding: 32px;
 
             text-align: center;
-          
+
+            background-color: $white;
+
+
+            position: relative;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+
+            .project-header {
+                text-align: left;
+                font-size: 28px;
+                padding-top: 12px;
+                padding-bottom: 12px;
+                border-bottom: 1px solid grey;
+                font-weight: normal;
+            }
+
+            .project-desc {
+                text-align: left;
+                font-size: 14px;
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+            .technologies-used {
+
+                position: absolute;
+                bottom: 24px;
+                left: 24px;
+                width: calc(100% - 48px);
+                color: $secondary;
+
+                font-size: 12px;
+                text-align: left;
+
+                .tech-header {
+                    font-weight: bold;
+                    color: $primary;
+                }
+
+            }
+
+        }
+
+        li:nth-child(1) {
+            border-top: 12px solid #f53f1f;
+        }
+
+        li:nth-child(2) {
+            border-top: 12px solid #1fe4f5;
+        }
+
+        li:nth-child(3) {
+            border-top: 12px solid #68fc94;
+        }
+
+        li:nth-child(4) {
+            border-top: 12px solid #d972f8;
+        }
+
+        li:nth-child(5) {
+            border-top: 12px solid #ff81f4;
+        }
+
+        li:nth-child(6) {
+            border-top: 12px solid #6ac2f1;
         }
     }
 

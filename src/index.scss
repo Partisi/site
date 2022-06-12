@@ -1,12 +1,12 @@
 // General Use
-$primary: #98C1D9;
-$secondary: #533A7B;
-$secondaryLight: #6969B3;
-$secondaryDark: #4B244A;
-$dark: #25171A;
+$primary: #FF0039;
+$secondary: #123345;
+$secondary-light: #213c4b;
+$tert: #944dff;
 
+$grey: #848485;
 $white: white;
-$black: black;
+$black: #050505;
 
 @import "./sections/intro/Intro.scss";
 @import "./sections/work/Work.scss";
@@ -16,22 +16,38 @@ $black: black;
 @import './sections/contact/Contact.scss';
 
 body {
-    background-color: $dark;
+    background-color: $secondary;
     margin: 0;
+    font-family: 'Lato', sans-serif;
 }
 
 
-h1,h2,h3,h4,h5,h6,p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     margin: 0;
     padding: 0;
 }
 
-h1,h2,h3,h4,h5,h6 {
-    font-family: 'League Spartan', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Prata', serif;
 }
 
-p {
-    font-family: 'Libre Baskerville', serif;
+button {
+    transition: 0.3s;
+}
+
+a {
+    text-decoration: none;
 }
 
 ul {
@@ -41,11 +57,25 @@ ul {
 }
 
 .section-container {
-    padding: 258px 257px;
+
+    padding: 64px 128px;
 
     .section-subtitle {
         text-align: center;
         font-size: 48px;
         padding-bottom: 24px;
+        color: $white;
     }
+}
+
+.time-length {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    background-color: $white;
+    border-radius: 4px;
+    border: 1px solid $black;
+    padding: 4px 12px;
+    text-align: center;
+    color: $black;
 }
