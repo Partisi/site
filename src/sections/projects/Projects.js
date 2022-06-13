@@ -48,8 +48,11 @@ export default function Projects() {
                 {myProjects.map((eachProject, index) => {
                     return (
                         <li key={index}>
-                            <h2 className="project-header">{eachProject.name}</h2>
+
                             <p className="time-length">{eachProject.year}</p>
+                            <div className="project-header-container">
+                                <h2 className="project-header">{eachProject.name}</h2>
+                            </div>
                             <p className="project-desc">{eachProject.description}</p>
                             <p className="technologies-used"><span className="tech-header">Technologies:</span> {eachProject.toolsUsed}</p>
                         </li>

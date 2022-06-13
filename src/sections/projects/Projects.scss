@@ -1,4 +1,5 @@
 #projects-container {
+    background: $secondary-light;
 
     ul {
         display: flex;
@@ -8,35 +9,48 @@
 
         li {
 
-            width: 400px;
-            height: 320px;
+            width: 320px;
+            height: 300px;
 
-            margin: 32px;
-            border-radius: 12px;
-            padding: 32px;
+            margin: 12px;
+            padding: 24px;
 
-            text-align: center;
-
-            background-color: $white;
-
+            border-top-left-radius: 50%;
+            border-bottom-right-radius: 12px;
 
             position: relative;
             box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 
-            .project-header {
-                text-align: left;
-                font-size: 28px;
-                padding-top: 12px;
-                padding-bottom: 12px;
-                border-bottom: 1px solid grey;
-                font-weight: normal;
+            background-color: $secondary;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .project-header-container {
+                height: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+
+                .project-header {
+                    text-align: right;
+                    font-size: 20px;
+                    font-weight: normal;
+                    color: $primary;
+                    padding-left: 64px;
+                    width: 100%;
+                }
             }
+
 
             .project-desc {
                 text-align: left;
                 font-size: 14px;
                 padding-top: 12px;
                 padding-bottom: 12px;
+                color: $white;
             }
 
             .technologies-used {
@@ -45,14 +59,14 @@
                 bottom: 24px;
                 left: 24px;
                 width: calc(100% - 48px);
-                color: $secondary;
+                color: $white;
 
                 font-size: 12px;
                 text-align: left;
 
                 .tech-header {
-                    font-weight: bold;
-                    color: $primary;
+                    font-style: italic;
+                    padding-right: 4px;
                 }
 
             }
@@ -60,27 +74,33 @@
         }
 
         li:nth-child(1) {
-            border-top: 12px solid #f53f1f;
+            border-top: 2px solid #f53f1f;
+            border-left: 2px solid #f53f1f;
         }
 
         li:nth-child(2) {
-            border-top: 12px solid #1fe4f5;
+            border-top: 2px solid #1fe4f5;
+            border-left: 2px solid #1fe4f5;
         }
 
         li:nth-child(3) {
-            border-top: 12px solid #68fc94;
+            border-top: 2px solid #68fc94;
+            border-left: 2px solid #68fc94;
         }
 
         li:nth-child(4) {
-            border-top: 12px solid #d972f8;
+            border-top: 2px solid #d972f8;
+            border-left: 2px solid #d972f8;
         }
 
         li:nth-child(5) {
-            border-top: 12px solid #ff81f4;
+            border-top: 2px solid #ff81f4;
+            border-left: 2px solid #ff81f4;
         }
 
         li:nth-child(6) {
-            border-top: 12px solid #6ac2f1;
+            border-top: 2px solid #6ac2f1;
+            border-left: 2px solid #6ac2f1;
         }
     }
 
