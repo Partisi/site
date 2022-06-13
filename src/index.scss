@@ -2,7 +2,7 @@
 $primary: #FF0039;
 $secondary: #123345;
 $secondary-light: #213c4b;
-$tert: #944dff;
+$tert: #5018e9;
 
 $grey: #848485;
 $white: white;
@@ -78,4 +78,12 @@ ul {
     padding: 4px 12px;
     text-align: center;
     color: $black;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .section-container {
+
+        padding: 64px 64px;
+    }
 }

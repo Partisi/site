@@ -1,8 +1,6 @@
 #research-container {
     color: white;
 
-    border: 2px solid black;
-
     #inner-research-container {
         display: flex;
         flex-direction: row;
@@ -49,7 +47,6 @@
             border-radius: 4px;
             width: 60%;
 
-
             position: relative;
 
             #report-info {
@@ -63,6 +60,7 @@
                     .report-keywords {
                         display: flex;
                         flex-direction: row;
+                        flex-wrap: wrap;
 
                         li {
                             padding: 4px 12px;
@@ -165,14 +163,22 @@
 
 }
 
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 800px) {
     #research-container {
-
         #inner-research-container {
             height: 500px;
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            height: 100%;
+
+            #report-list {
+                width: 100%;
+            }
+            #viewing-report {
+                width: 100%;
+            }
         }
     }
 }
