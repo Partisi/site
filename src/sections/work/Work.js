@@ -27,15 +27,17 @@ export default function Work() {
                 {myEmployment.map((eachEmployment, index) => {
                     return (
                         <li key={index}>
-                            <p className="time-length">{eachEmployment.length}</p>
-                            <div className="top-employment">
-                                <h2><a href={eachEmployment.link}>{eachEmployment.employer}</a></h2>
-                                <p>{eachEmployment.companyDescription}</p>
-                            </div>
-                            <div className="bottom-employment">
-                                <p>{eachEmployment.title}</p>
-                                <p>{eachEmployment.jobDescription}</p>
-                            </div>
+                            <a href={eachEmployment.link} target="_blank" rel="noreferrer">
+                                <p className="time-length">{eachEmployment.length}</p>
+                                <div className="top-employment">
+                                    <h2>{eachEmployment.employer}</h2>
+                                    <p>{eachEmployment.companyDescription}</p>
+                                </div>
+                                <div className="bottom-employment">
+                                    <p className="title">{eachEmployment.title}</p>
+                                    <p>{eachEmployment.jobDescription}</p>
+                                </div>
+                            </a>
                         </li>
                     )
                 })}

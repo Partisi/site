@@ -5,7 +5,7 @@
         display: flex;
         flex-direction: row;
 
-        height: 500px;
+        height: 800px;
         overflow-y: scroll;
 
         #report-list {
@@ -43,7 +43,7 @@
         }
 
         #viewing-report {
-            background-color: $secondary-light;
+            background-color: $primary;
             border-radius: 4px;
             width: 60%;
 
@@ -55,7 +55,7 @@
                 padding: 24px;
 
                 .report-header {
-                    color: $primary;
+                    color: $secondary;
 
                     .report-keywords {
                         display: flex;
@@ -64,7 +64,7 @@
 
                         li {
                             padding: 4px 12px;
-                            background-color: $tert;
+                            background-color: $secondary;
                             margin: 4px;
                             color: $white;
                             border-radius: 4px;
@@ -75,15 +75,17 @@
 
                 .report-description {
                     padding-top: 24px;
+                    color: $black;
                 }
 
                 .report-abstract {
                     font-style: italic;
                     padding-top: 12px;
 
+                    color: $black;
                     .abstract-key {
                         font-style: normal;
-                        color: $primary;
+                        color: $secondary;
                     }
                 }
 
@@ -119,12 +121,12 @@
                         margin-left: 6px;
                         border-radius: 4px;
 
-                        background-color: $grey;
+                        background-color: $black-faded;
                         color: $white;
 
                         &:hover {
                             cursor: pointer;
-                            opacity: 0.8;
+                            filter: brightness(90%);
                         }
 
                         .redirect-read-icon {
@@ -137,7 +139,7 @@
                 .read-report-bttn {
                     padding: 8px 24px;
                     border: none;
-                    background-color: $primary;
+                    background-color: $secondary;
                     color: $white;
                     border-radius: 4px;
                     font-size: 16px;
@@ -149,7 +151,7 @@
 
                     &:hover {
                         cursor: pointer;
-                        opacity: 0.8;
+                        filter: brightness(90%);
                     }
 
                     .redirect-read-icon {

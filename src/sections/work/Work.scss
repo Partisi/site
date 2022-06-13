@@ -1,5 +1,4 @@
 #work-container {
-    color: white;
 
     ul {
         display: flex;
@@ -13,25 +12,42 @@
 
             border-radius: 8px;
             width: 320px;
-            background-color: $secondary;
+            background-color: $primary;
 
             display: flex;
             flex-direction: column;
 
             box-shadow: $secondary 0px 0px 0px 2px inset, $white 10px -10px 0px -3px, $secondary 10px -10px;
 
+            transition: transform 1s;
+
+            &:hover {
+                transform: scale(1.05);
+                cursor: pointer;
+            }
+
+          
             .top-employment {
                 padding: 24px;
+                h2 {
+                    color: $secondary;
+                    font-weight: bold;
+                }
+                color: $black;
             }
 
             .bottom-employment {
                 padding: 24px;
-                background-color: $secondary;
 
                 border-bottom-left-radius: 8px;
                 border-bottom-right-radius: 8px;
 
-                flex: 1;
+              
+                color: $black;
+
+                .title {
+                    color: $secondary;
+                }
             }
         }
     }

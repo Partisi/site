@@ -1,0 +1,31 @@
+#skills-container {
+    border: 2px solid black;
+    color: $white;
+
+    #all-skill-groups {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        .skill-group {
+            // background-color: $tert;
+            margin: 12px;
+            
+            .skill-group-header {
+                color: $primary;
+                text-transform: capitalize;
+                padding-bottom: 8px;
+            }
+            .skill-list {
+                li {
+                    width: 100%;
+                    background-color: $white;
+                    margin-bottom: 12px;
+                    padding: 6px 12px;
+                    border-left: 6px solid $primary;
+                    color: $black;
+                }
+            }
+        }
+    }
+}

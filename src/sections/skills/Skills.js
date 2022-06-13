@@ -48,7 +48,25 @@ export default function Skills() {
     }
     return (
         <section id="skills-container" className="section-container">
-            <h1>Skills Section</h1>
+            <h1 className="section-subtitle">Skills</h1>
+            <div id="all-skill-groups">
+                {Object.keys(mySkills).map((eachSkill, index) => {
+                    return (
+                        <div key={index} className="skill-group">
+                            <h2 className="skill-group-header">{eachSkill}</h2>
+                            <ul className="skill-list">
+                                {mySkills[eachSkill].map((eachSpecific, index) => {
+                                    return (
+                                        <li key={index}>
+                                            <p>{eachSpecific.key}</p>
+                                        </li>
+                                    )
+                                })}
+                            </ul>
+                        </div>
+                    )
+                })}
+            </div>
         </section>
     )
 }
