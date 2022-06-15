@@ -19,7 +19,7 @@ function App() {
         <WaveContainer Selection={<Projects />} />
 
         <Research />
-        <Skills />
+        <WaveContainer Selection={<Skills />} />
 
         <Contact />
       </article>
@@ -28,7 +28,7 @@ function App() {
 }
 
 
-const WaveContainer = ({Selection}) => {
+const WaveContainer = ({ Selection }) => {
   return (
     <>
       <div className="top-wave">
