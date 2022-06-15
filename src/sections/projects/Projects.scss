@@ -21,11 +21,14 @@
             position: relative;
             box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 
-            background-color: $secondary;
+            background-color: $primary;
 
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            border-left: 8px solid $secondary-light;
+            border-top: 8px solid $secondary-light;
 
             .project-header-container {
                 height: 80px;
@@ -38,7 +41,7 @@
                     text-align: right;
                     font-size: 20px;
                     font-weight: normal;
-                    color: $primary;
+                    color: $secondary;
                     padding-left: 64px;
                     width: 100%;
                 }
@@ -50,16 +53,18 @@
                 font-size: 14px;
                 padding-top: 12px;
                 padding-bottom: 12px;
-                color: $white;
+                color: $black;
             }
 
             .technologies-used {
 
+                border-top: 1px solid grey;
                 position: absolute;
                 bottom: 24px;
                 left: 24px;
                 width: calc(100% - 48px);
-                color: $white;
+                color: $black;
+                padding-top: 12px;
 
                 font-size: 12px;
                 text-align: left;
@@ -73,35 +78,35 @@
 
         }
 
-        li:nth-child(1) {
-            border-top: 2px solid #ffa754;
-            border-left: 2px solid #ffa754;
-        }
+        // li:nth-child(1) {
+        //     border-top: 2px solid #ffa754;
+        //     border-left: 2px solid #ffa754;
+        // }
 
-        li:nth-child(2) {
-            border-top: 2px solid #1fe4f5;
-            border-left: 2px solid #1fe4f5;
-        }
+        // li:nth-child(2) {
+        //     border-top: 2px solid #1fe4f5;
+        //     border-left: 2px solid #1fe4f5;
+        // }
 
-        li:nth-child(3) {
-            border-top: 2px solid #68fc94;
-            border-left: 2px solid #68fc94;
-        }
+        // li:nth-child(3) {
+        //     border-top: 2px solid #68fc94;
+        //     border-left: 2px solid #68fc94;
+        // }
 
-        li:nth-child(4) {
-            border-top: 2px solid #d972f8;
-            border-left: 2px solid #d972f8;
-        }
+        // li:nth-child(4) {
+        //     border-top: 2px solid #d972f8;
+        //     border-left: 2px solid #d972f8;
+        // }
 
-        li:nth-child(5) {
-            border-top: 2px solid #e71c1c;
-            border-left: 2px solid #e71c1c;
-        }
+        // li:nth-child(5) {
+        //     border-top: 2px solid #e71c1c;
+        //     border-left: 2px solid #e71c1c;
+        // }
 
-        li:nth-child(6) {
-            border-top: 2px solid #6ac2f1;
-            border-left: 2px solid #6ac2f1;
-        }
+        // li:nth-child(6) {
+        //     border-top: 2px solid #6ac2f1;
+        //     border-left: 2px solid #6ac2f1;
+        // }
     }
 
 }

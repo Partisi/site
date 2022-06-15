@@ -42,6 +42,7 @@ export default function Projects() {
     ]
 
     return (
+        
         <section id="projects-container" className="section-container">
             <h1 className="section-subtitle">Projects</h1>
             <ul>
@@ -59,6 +60,7 @@ export default function Projects() {
                     )
                 })}
             </ul>
+            
         </section>
     )
 }

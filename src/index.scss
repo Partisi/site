@@ -81,6 +81,70 @@ ul {
     color: $black;
 }
 
+.top-wave {
+    margin-bottom: -4px;
+}
+
+.bottom-wave {
+    margin-top: -4px;
+}
+
+.top-wave {
+    position: relative;
+    .wave-one {
+        z-index: 10;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .wave-two {
+        position: absolute;
+        top: 6px;
+        left: 0px;
+        width: 100%;
+        z-index: 20;
+    }
+
+    .wave-overlay {
+        position: absolute;
+        top: 10px;
+        left: 0px;
+        width: 100%;
+        z-index: 30;
+    }
+}
+
+.bottom-wave {
+    position: relative;
+
+    .wave-one {
+        z-index: 30;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .wave-two {
+        position: absolute;
+        top: 6px;
+        left: 0px;
+        width: 100%;
+        z-index: 20;
+    }
+
+    .wave-overlay {
+        position: absolute;
+        top: 10px;
+        left: 0px;
+        width: 100%;
+        z-index: 10;
+    }
+}
+
+
 @media only screen and (max-width: 800px) {
 
     .section-container {
