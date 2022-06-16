@@ -19,6 +19,7 @@ function App() {
         <WaveContainer Selection={<Projects />} />
 
         <Research />
+        
         <WaveContainer Selection={<Skills />} />
 
         <Contact />

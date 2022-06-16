@@ -8,22 +8,36 @@
         justify-content: space-evenly;
 
         .skill-group {
-            // background-color: $tert;
             margin: 12px;
+
+            width: 320px;
             
             .skill-group-header {
                 color: $primary;
                 text-transform: capitalize;
                 padding-bottom: 8px;
+                text-align: center;
             }
             .skill-list {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
                 li {
-                    width: 100%;
-                    background-color: $white;
                     margin-bottom: 12px;
                     padding: 6px 12px;
-                    border-left: 6px solid $primary;
                     color: $black;
+
+                    width: 160px;
+
+                    border-radius: 12px;
+                    border-top-left-radius: 2px;
+                    background-color: white;
+                    text-align: left;
+                    
+                    background: linear-gradient(124deg, rgba(255,0,57,1) 0%, rgba(217,214,226,1) 100%);
+
                 }
             }
         }
