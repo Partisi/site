@@ -1,23 +1,37 @@
 import React, { useState } from 'react'
-
 import ProfilePicture from "../../assets/pic.jpeg"
+import emailjs from 'emailjs-com';
+
 export default function Contact() {
 
 
-    const [formErrors, setFormErrors] = useState({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-    })
     const [submitError, setSubmitError] = useState("")
-    function handleSubmit(e) {
+
+    const [formSubmitted, setFormSubmitted] = useState(false)
+    const [submitting, setSubmitting] = useState(false)
+
+    async function handleSubmit(e) {
         e.preventDefault()
         const formData = Object.fromEntries(new FormData(e.target))
 
-
-        console.log(formData)
+        setSubmitting(true)
+        try {
+            const response = await emailjs.send(
+                process.env.REACT_APP_SERVICE_ID,
+                process.env.REACT_APP_TEMPLATE_ID,
+                {
+                    name: formData.name,
+                    email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                },
+                process.env.REACT_APP_PUBLIC_KEY
+            )
+            setFormSubmitted(true)
+        } catch (error) { console.log(error); setSubmitError("There was an error submitting the form, please try again later!") }
+        setSubmitting(false)
     }
+
 
     return (
         <section id="contact-container" className="section-container">
@@ -26,30 +40,61 @@ export default function Contact() {
                     <img src={ProfilePicture} />
                     <div className="pic-border" />
                 </div>
-                <div className="form-container">
-                    <h2 className="reachout-header">Want to Reach Out?</h2>
-                    <form onSubmit={handleSubmit}>
 
-                        <InputBox inputKey={"name"} />
-                        <InputBox inputKey={"email"} />
-                        <InputBox inputKey={"subject"} />
-                        <InputBox inputKey={"message"} size="l" />
+                {!!formSubmitted ? (
+                    <div id="form-success"className="form-container">
+                        <h2>Form Submitted</h2>
+                        <p>Thanks for the message! I'll get back to you as soon as possible!</p>
+                    </div>
+                ) : (
+                    <div className="form-container">
+                        <h2 className="reachout-header">Want to Reach Out?</h2>
+                        <form onSubmit={handleSubmit}>
 
-                        <button type="submit" className="submit-bttn">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </section>
+                            <InputBox inputKey={"name"} disabled={submitting} />
+                            <InputBox inputKey={"email"} disabled={submitting} />
+                            <InputBox inputKey={"subject"} disabled={submitting} />
+                            <InputBox inputKey={"message"} size="l" disabled={submitting} />
+
+                            <button
+                                type="submit"
+                                className="submit-bttn"
+                                disabled={submitting}
+                            >{submitting ? "Loading" : "Submit"}</button>
+                            {!!submitError && <div>{submitError}</div>}
+                        </form>
+                    </div>
+                )
+                }
+
+            </div >
+        </section >
     )
 }
 
-const InputBox = ({ inputKey, size = "s" }) => {
+const InputBox = ({ inputKey, disabled, size = "s" }) => {
     return (
         <div className="inputbox">
             {size === "l" ? (
-                <textarea type="text" name={inputKey} required rows="3" cols="10" />
+                <textarea
+                    type="text"
+                    placeholder=" "
+                    name={inputKey}
+                    required
+                    rows="3"
+                    cols="10"
+                    autoComplete="off"
+                    disabled={disabled}
+                />
             ) : (
-                <input type="text" name={inputKey} required />
+                <input
+                    type="text"
+                    placeholder=" "
+                    name={inputKey}
+                    required
+                    autoComplete="off"
+                    disabled={disabled}
+                />
             )}
 
             <label>{inputKey}<span className="required">*</span></label>

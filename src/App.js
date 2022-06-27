@@ -9,6 +9,8 @@ import Skills from "./sections/skills/Skills"
 import Work from "./sections/work/Work"
 
 
+
+
 function App() {
   return (
     <div className="App">
@@ -19,7 +21,7 @@ function App() {
         <WaveContainer Selection={<Projects />} />
 
         <Research />
-        
+
         <WaveContainer Selection={<Skills />} />
 
         <Contact />
