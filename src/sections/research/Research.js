@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FiArrowUpRight } from "react-icons/fi";
 
 export default function Research() {
@@ -48,7 +48,7 @@ export default function Research() {
 
 
     const [viewingReport, setViewingReport] = useState(reports[0])
-
+    
     return (
         <section id="research-container" className="section-container">
             <h1 className="section-subtitle">Research</h1>
@@ -56,7 +56,9 @@ export default function Research() {
                 <ul id="report-list">
                     {reports.map((eachReport, index) => {
                         return (
-                            <li key={index} onClick={() => setViewingReport(eachReport)}>
+                            <li
+                                className={viewingReport.title === eachReport.title ? "active-report" : ""}
+                                key={index} onClick={() => setViewingReport(eachReport)}>
                                 <p className="report-year">({eachReport.year})</p>
                                 <p className="report-title">{eachReport.title}</p>
                             </li>

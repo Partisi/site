@@ -11,11 +11,13 @@
         #report-list {
             width: 40%;
 
+            position: relative;
             padding: 12px;
 
 
             li {
                 padding: 12px 24px;
+                position: relative;
 
                 display: flex;
                 flex-direction: row;
@@ -39,6 +41,11 @@
 
             li+li {
                 border-top: 1px solid grey;
+            }
+
+            .active-report {
+                color: white;
+
             }
         }
 
@@ -83,6 +90,7 @@
                     padding-top: 12px;
 
                     color: $black;
+
                     .abstract-key {
                         font-style: normal;
                         color: $secondary;
@@ -178,6 +186,7 @@
             #report-list {
                 width: 100%;
             }
+
             #viewing-report {
                 width: 100%;
             }

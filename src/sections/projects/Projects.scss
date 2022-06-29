@@ -10,10 +10,11 @@
         li {
 
             width: 320px;
-            height: 300px;
+            min-height: 300px;
 
             margin: 24px;
             padding: 24px;
+            padding-bottom: 80px;
 
             border-top-left-radius: 50%;
             border-bottom-right-radius: 12px;
@@ -31,7 +32,7 @@
             border-top: 8px solid $secondary-light;
 
             .project-header-container {
-                height: 80px;
+                min-height: 80px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
