@@ -5,27 +5,32 @@
     #all-skill-groups {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: center;
 
         .skill-group {
             margin: 12px;
 
             width: 320px;
-            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
             .skill-group-header {
                 color: $primary;
                 text-transform: capitalize;
                 padding-bottom: 8px;
                 text-align: center;
+                width: 300px;
             }
+
             .skill-list {
                 display: flex;
-                flex-direction: column;
+                flex-wrap: wrap;
                 justify-content: center;
-                align-items: center;
                 width: 100%;
+                grid-gap: 12px;
+
                 li {
-                    margin-bottom: 12px;
                     padding: 6px 12px;
                     color: $black;
 
@@ -35,11 +40,34 @@
                     border-top-left-radius: 2px;
                     background-color: white;
                     text-align: left;
-                    
-                    background: linear-gradient(124deg, rgba(255,0,57,1) 0%, rgba(217,214,226,1) 100%);
+
+                    border-left: 12px solid $secondary-light;
+
 
                 }
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #skills-container {
+        #all-skill-groups {
+            flex-wrap: wrap;
+
+            .skill-group {
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+
+                .skill-list {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, 200px);
+                    justify-content: center;
+                    grid-gap: 12px;
+                }
+            }
+
         }
     }
 }

@@ -48,7 +48,7 @@ export default function Skills() {
     }
     return (
         <section id="skills-container" className="section-container">
-            <h1 className="section-subtitle">Skills</h1>
+            <h1 className="section-subtitle">Software Skills</h1>
             <div id="all-skill-groups">
                 {Object.keys(mySkills).map((eachSkill, index) => {
                     return (
