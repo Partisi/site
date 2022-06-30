@@ -1,61 +1,46 @@
 import React, { useState } from 'react'
 import Sketch from 'react-p5'
 
+const sketchHeight = 1200 // canvas height
 
-const sketchHeight = 1200
-
+// Star obj that is init z times
 class Star {
     constructor(p5) {
+
+        // Star position
         this.x = p5.random(0, p5.width)
         this.y = p5.random(0, sketchHeight)
-        this.brightness = p5.random(0, 100)
-        this.brightChange = 1
 
-        this.size = 3
-
+        // Star movement speed & direction
         this.xSpeed = p5.random(-0.3, 0.3)
         this.ySpeed = p5.random(-0.3, 0.3)
 
+        // The 3 possible colors this star can dominate
         let colorCategories = [
             { r: 255, g: 23, b: 201 },
             { r: 23, g: 255, b: 166 },
             { r: 99, g: 32, b: 238 }
         ]
 
-        if (this.x < document.getElementById("intro-container").clientWidth / 2) {
+        // Depending on the stars initial location, set its color
+        if (this.x < document.getElementById("intro-container").clientWidth / 2) { // if star on left
             this.color = colorCategories[0]
-        } else if (this.y < 300) {
+        } else if (this.y < 300) { // if star top right
             this.color = colorCategories[1]
-        } else {
+        } else { // bottom right
             this.color = colorCategories[2]
         }
     }
+
+    // Display func that runs every frame (60fps)
     display(p5, allDots) {
 
-
-
-        // Does the connect
+        // Connects the points
         this.connect(p5, allDots)
 
-
-        // Main
-        p5.noStroke()
-        p5.fill("white")
-
-
-
-        //p5.ellipse(this.x, this.y, this.size, this.size)
-        if (this.brightness === 100 || this.brightness === 0) {
-            this.brightChange = this.brightChange * -1
-        }
-        this.brightness += this.brightChange
-
-
-
-        // Movement
+        // Movement (with bounce functionality)
         this.x += this.xSpeed
         this.y += this.ySpeed
-
         if (this.x < 0 || this.x > document.getElementById("intro-container").clientWidth) {
             this.xSpeed *= -1
         }
@@ -64,30 +49,30 @@ class Star {
         }
     }
 
+    // Draws the line between points nearby
     connect(p5, allDots) {
-
-        const dDistance = 200
-        let copyDots = [...allDots]
-        for (let i = 0; i < copyDots.length; i++) {
-            let eachDot = copyDots[i]
+        const dDistance = 200 // distance to start connect
+        for (let i = 0; i < allDots.length; i++) {
+            let eachDot = allDots[i]
             if (this.x === eachDot.x && this.y === eachDot.y) continue
             let distanceBetween = p5.dist(this.x, this.y, eachDot.x, eachDot.y)
             if (distanceBetween < dDistance) {
                 let percentFilled = ((distanceBetween / dDistance) - 1) * -1
+                let lineOpacity = 255 * percentFilled // opacity 0 - 1 depending on distance between two points
 
-                let lineOpacity = 255 * percentFilled
-
+                // The colors of two points
                 let color1 = p5.color(this.color.r, this.color.g, this.color.b, lineOpacity)
                 let color2 = p5.color(eachDot.color.r, eachDot.color.g, eachDot.color.b, lineOpacity)
 
                 let lineColor
 
-                if (color1 > color2) {
+                if (color1 > color2) { // hiearchy of colors (one always beats the other)
                     lineColor = color1
                 } else {
                     lineColor = color2
                 }
 
+                // Draw the connection line
                 p5.stroke(lineColor)
                 p5.strokeWeight(2)
                 p5.line(this.x, this.y, eachDot.x, eachDot.y)
@@ -96,11 +81,8 @@ class Star {
 
     }
 }
-function midpoint(x1, y1, x2, y2) {
-    return { x: (x1 + x2) / 2, y: (y1 + y2) / 2 }
-}
 
-
+// Creates a gradient
 function setGradient({ x, y, w, h, c1, c2, axis, p5 }) {
     p5.noFill()
     if (axis == "Y") {  // Top to bottom gradient
@@ -121,10 +103,13 @@ function setGradient({ x, y, w, h, c1, c2, axis, p5 }) {
     }
 }
 
+// Main Sketch Component
 export default function MySketch() {
-    const [stars, changeStars] = useState([])
-    function populateStars(currentWidth, p5) {
+    const [stars, changeStars] = useState([]) // each 'dot'
 
+    // Populates the screen with dots depending on the current width
+    // i.e. a larger screen size has more dots compared to that of a smaller screen
+    function populateStars(currentWidth, p5) {
         let amount = 0
         if (currentWidth <= 400) {
             amount = 30
@@ -135,23 +120,22 @@ export default function MySketch() {
         } else {
             amount = 100
         }
-
-
-        let newStars = []
-        for (let i = 0; i < amount; i++) {
-            newStars.push(new Star(p5))
-        }
+        let newStars = [] // sets in new list to clear current stars
+        for (let i = 0; i < amount; i++) newStars.push(new Star(p5))
         changeStars([...newStars])
     }
 
-
     return (
         <Sketch
+
+            // Runs on initial setup
             setup={(p5) => {
+                // Create canvas and populates initial stars
                 p5.createCanvas(document.getElementById("intro-container").clientWidth, sketchHeight)
                 populateStars(document.getElementById("intro-container").clientWidth, p5)
-
             }}
+
+            // Runs every frame (60fps)
             draw={(p5) => {
                 p5.background("black")
                 let currentWidth = document.getElementById("intro-container").clientWidth
@@ -160,9 +144,9 @@ export default function MySketch() {
                     populateStars(currentWidth, p5)
                 }
 
+                // Gradient colors
                 let topColor = p5.color(0, 0, 0)
                 let bottomColor = p5.color(99, 32, 238)
-
                 setGradient({
                     x: 0, y: 400,
                     w: currentWidth, h: sketchHeight - 400,
@@ -171,31 +155,21 @@ export default function MySketch() {
                     p5
                 })
 
+                // Display each star and their connections
                 stars.forEach(eachStar => {
                     eachStar.display(p5, stars)
                 })
 
-
-
-                // bubbles.forEach(eachBubble => {
-                //     eachBubble.display(p5)
-                //     if (eachBubble.x - 100 >= p5.width) { // resets to start
-                //         eachBubble.startUp(p5)
-                //     }
-                // })
             }}
+
+            // Runs ANYTIME the mouse moves (even if not on canvas!)
             mouseMoved={(p5) => {
                 if (p5.mouseY <= sketchHeight) {
-                    const pushDistance = 100
-                    for (let i = 0; i < stars.length; i++) {
-                        let particle = stars[i]
-                        if (p5.dist(p5.mouseX, p5.mouseY, particle.x, particle.y) <= pushDistance) {
 
+                    // Some future functionality to handle mouse movement/interaction
+                    //...
 
-                        }
-                    }
                 }
-
             }}
         />
     )
