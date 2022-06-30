@@ -7,6 +7,9 @@ const sketchHeight = 1200 // canvas height
 class Star {
     constructor(p5) {
 
+        // id (used for each unique id)
+        this.id = Math.random()
+
         // Star position
         this.x = p5.random(0, p5.width)
         this.y = p5.random(0, sketchHeight)
@@ -23,6 +26,7 @@ class Star {
         ]
 
         // Depending on the stars initial location, set its color
+        // note. to get more fancy, can have coords for each color and find closest color to star
         if (this.x < document.getElementById("intro-container").clientWidth / 2) { // if star on left
             this.color = colorCategories[0]
         } else if (this.y < 300) { // if star top right
@@ -52,8 +56,16 @@ class Star {
     // Draws the line between points nearby
     connect(p5, allDots) {
         const dDistance = 200 // distance to start connect
+        const connectedStars = [this.id]
         for (let i = 0; i < allDots.length; i++) {
             let eachDot = allDots[i]
+
+            // if connection already exists OR to self, just ignore
+            // note. this helps with performance (if a connects b is same as b connects a)
+            if (eachDot.id in connectedStars) {
+                continue
+            }
+
             if (this.x === eachDot.x && this.y === eachDot.y) continue
             let distanceBetween = p5.dist(this.x, this.y, eachDot.x, eachDot.y)
             if (distanceBetween < dDistance) {
@@ -66,16 +78,17 @@ class Star {
 
                 let lineColor
 
-                if (color1 > color2) { // hiearchy of colors (one always beats the other)
-                    lineColor = color1
-                } else {
-                    lineColor = color2
-                }
+                // hiearchy of colors (one always beats the other)
+                if (color1 > color2) { lineColor = color1 }
+                else { lineColor = color2 }
 
                 // Draw the connection line
                 p5.stroke(lineColor)
                 p5.strokeWeight(2)
                 p5.line(this.x, this.y, eachDot.x, eachDot.y)
+
+                // Adds id to already checked
+                connectedStars.push(eachDot.id)
             }
         }
 
