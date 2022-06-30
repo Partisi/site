@@ -3,8 +3,22 @@
     padding-bottom: 128px;
 
     height: 800px;
-    #intro-text {
-        z-index: 9999999;
+    position: relative;
 
+    #intro-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        h1 {
+            font-size: 80px;
+            color: $white;
+        }
+
+        p {
+            color: $white;
+            font-size: 24px;
+        }
     }
 }

@@ -6,10 +6,9 @@ export default function Intro() {
         <section id="intro-container" className="section-container">
             <div id="intro-text">
                 <h1>Erol Bickici</h1>
-                <p>Welcome</p>
+                <p>I do some business stuff and some tech stuff</p>
             </div>
             <MySketch />
-            <div id="bottom-wavy"></div>
-        </section>
+        </section >
     )
 }

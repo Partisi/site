@@ -9,24 +9,18 @@ import Skills from "./sections/skills/Skills"
 import Work from "./sections/work/Work"
 
 
-
-
 function App() {
   return (
-    <div id="site-container" className="App">
-      <article>
-        <Intro />
-        <Work />
-
-        <WaveContainer Selection={<Projects />} />
-
-        <Research />
-
-        <WaveContainer Selection={<Skills />} />
-
-        <Contact />
-      </article>
-    </div>
+      <div id="site-container" className="App">
+        <article>
+          <Intro />
+          <Work />
+          <WaveContainer Selection={<Projects />} />
+          <Research />
+          <WaveContainer Selection={<Skills />} />
+          <Contact />
+        </article>
+      </div>
   )
 }
 
