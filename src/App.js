@@ -12,7 +12,7 @@ import InstagramLogo from "./assets/icons8-instagram-50.png"
 import LinkedInLogo from "./assets/icons8-linkedin-50.png"
 import MediumLogo from "./assets/icons8-medium-50.png"
 import TwitterLogo from "./assets/icons8-twitter-50.png"
-
+import GithubLogo from "./assets/icons8-github-30.png"
 
 // Main App Container
 function App() {
@@ -58,27 +58,33 @@ const Footer = () => {
       <ul id="social-media-links">
         
         <li className="social-media-wrapper">
-          <a href="https://www.instagram.com/ErolBickici/" target="_blank">
+          <a href="https://www.instagram.com/ErolBickici/" target="_blank" rel="noreferrer">
             <img className="social-media-icon" src={InstagramLogo}
               alt="instagram icon" />
           </a>
         </li>
         <li className="social-media-wrapper">
-          <a href="https://twitter.com/ErolBickici" target="_blank">
+          <a href="https://twitter.com/ErolBickici" target="_blank" rel="noreferrer">
             <img className="social-media-icon" src={TwitterLogo}
               alt="twitter icon" />
           </a>
         </li>
         <li className="social-media-wrapper">
-          <a href="https://www.linkedin.com/in/erol-bickici-9683a4183/" target="_blank">
+          <a href="https://www.linkedin.com/in/erol-bickici-9683a4183/" target="_blank" rel="noreferrer">
             <img className="social-media-icon" src={LinkedInLogo}
               alt="linkedin icon" />
           </a>
         </li>
         <li className="social-media-wrapper">
-          <a href="https://medium.com/@ErolBickici" target="_blank">
+          <a href="https://medium.com/@ErolBickici" target="_blank" rel="noreferrer">
             <img className="social-media-icon" src={MediumLogo}
               alt="medium icon" />
+          </a>
+        </li>
+        <li className="social-media-wrapper">
+          <a href="https://github.com/Partisi" target="_blank" rel="noreferrer">
+            <img className="social-media-icon" src={GithubLogo}
+              alt="github icon" />
           </a>
         </li>
       </ul>
@@ -88,7 +94,7 @@ const Footer = () => {
 
             </p>
         <p className="math-formula">
-          <a href="https://www.desmos.com/calculator/lncpsghko4" target="_blank">
+          <a href="https://www.desmos.com/calculator/lncpsghko4" target="_blank" rel="noreferrer">
             $$(x^2 + y^2 - 1)^3 = x^2y^3$$
                 </a>
         </p>

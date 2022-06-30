@@ -86,12 +86,12 @@ export default function Research() {
                     <div className="redirect-bottom">
                         {!!viewingReport.additionalNote && (
                             <div id="viewing-additional-info">
-                                <a href={viewingReport.additionalLink} target="_blank" rel="noreffer">
+                                <a href={viewingReport.additionalLink} target="_blank" rel="noreferrer">
                                     <button className="read-additional-bttn"><p>{viewingReport.additionalNote} </p><FiArrowUpRight className="redirect-read-icon" /></button>
                                 </a>
                             </div>
                         )}
-                        <a href={viewingReport.githubLink} target="_blank" rel="noreffer">
+                        <a href={viewingReport.githubLink} target="_blank" rel="noreferrer">
                             <button className="read-report-bttn"><p>Read Report</p> <FiArrowUpRight className="redirect-read-icon" /></button>
                         </a>
                     </div>
