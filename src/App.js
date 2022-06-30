@@ -14,6 +14,7 @@ import MediumLogo from "./assets/icons8-medium-50.png"
 import TwitterLogo from "./assets/icons8-twitter-50.png"
 
 
+// Main App Container
 function App() {
   return (
     <div id="site-container" className="App">
@@ -31,6 +32,7 @@ function App() {
 }
 
 
+// Wraps the component in a wavy design (from svg)
 const WaveContainer = ({ Selection }) => {
   return (
     <>
@@ -49,7 +51,7 @@ const WaveContainer = ({ Selection }) => {
   )
 }
 
-
+// Footer for bottom
 const Footer = () => {
   return (
     <footer id="footer-wrapper">
@@ -74,7 +76,7 @@ const Footer = () => {
           </a>
         </li>
         <li className="social-media-wrapper">
-          <a href="https://medium.com/@emb689/about" target="_blank">
+          <a href="https://medium.com/@ErolBickici" target="_blank">
             <img className="social-media-icon" src={MediumLogo}
               alt="medium icon" />
           </a>

@@ -14,7 +14,6 @@
             position: relative;
             padding: 12px;
 
-
             li {
                 padding: 12px 24px;
                 position: relative;
@@ -100,9 +99,7 @@
                 #bottom-buffer {
                     height: 100px;
                 }
-
             }
-
 
             .redirect-bottom {
                 position: absolute;
@@ -140,7 +137,6 @@
                         .redirect-read-icon {
                             font-size: 24px;
                         }
-
                     }
                 }
 
@@ -170,9 +166,9 @@
             }
         }
     }
-
 }
 
+// Handles Mobile
 @media only screen and (max-width: 800px) {
     #research-container {
         #inner-research-container {

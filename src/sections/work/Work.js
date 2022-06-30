@@ -1,7 +1,9 @@
 import React from 'react'
 
+// Employment information
 export default function Work() {
 
+    // Full Employment
     const myEmployment = [
         {
             employer: "Coopsight",

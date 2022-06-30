@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Full Project List
 export default function Projects() {
 
     const myProjects = [

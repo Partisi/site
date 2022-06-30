@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { FiArrowUpRight } from "react-icons/fi";
 
+// Full Research Container
 export default function Research() {
 
     const reports = [
@@ -46,13 +47,15 @@ export default function Research() {
         },
     ]
 
-
+    // Designates which report is currently being viewed
     const [viewingReport, setViewingReport] = useState(reports[0])
-    
+
     return (
         <section id="research-container" className="section-container">
             <h1 className="section-subtitle">Research</h1>
             <div id="inner-research-container">
+
+                {/* List View */}
                 <ul id="report-list">
                     {reports.map((eachReport, index) => {
                         return (
@@ -66,6 +69,7 @@ export default function Research() {
                     })}
                 </ul>
 
+                {/* Current Report Being Viewed */}
                 <div id="viewing-report">
                     <div id="report-info">
                         <div className="report-header">
@@ -79,7 +83,6 @@ export default function Research() {
                         <p className="report-abstract"><span className="abstract-key">Abstract - </span>{viewingReport.abstract}</p>
                         <div id="bottom-buffer" />
                     </div>
-
                     <div className="redirect-bottom">
                         {!!viewingReport.additionalNote && (
                             <div id="viewing-additional-info">
@@ -91,14 +94,9 @@ export default function Research() {
                         <a href={viewingReport.githubLink} target="_blank" rel="noreffer">
                             <button className="read-report-bttn"><p>Read Report</p> <FiArrowUpRight className="redirect-read-icon" /></button>
                         </a>
-
                     </div>
-
                 </div>
-
-
             </div>
-
         </section>
     )
 }

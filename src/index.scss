@@ -8,6 +8,7 @@ $white: #f5f5f5;
 $black: #211A1D;
 $black-faded: #222633;
 
+// Import all design files based on section
 @import "./sections/intro/Intro.scss";
 @import "./sections/work/Work.scss";
 @import "./sections/projects/Projects.scss";
@@ -15,12 +16,12 @@ $black-faded: #222633;
 @import "./sections/skills/Skills.scss";
 @import './sections/contact/Contact.scss';
 
+// Global Adjustments
 body {
     background-color: $secondary;
     margin: 0;
     font-family: 'Lato', sans-serif;
 }
-
 
 h1,
 h2,
@@ -65,8 +66,7 @@ ul {
     list-style: none;
 }
 
-
-.p5Canvas {
+.p5Canvas { // p5 Sketch animation
     position: absolute;
     top: 0;
     left: 0;
@@ -74,7 +74,6 @@ ul {
 }
 
 .section-container {
-
     padding: 16px 128px;
 
     .section-subtitle {
@@ -84,7 +83,6 @@ ul {
         color: $white;
     }
 }
-
 .time-length {
     position: absolute;
     top: -18px;
@@ -97,6 +95,7 @@ ul {
     color: $black;
 }
 
+// Wave Designs
 .top-wave {
     margin-bottom: -4px;
 }
@@ -161,7 +160,7 @@ ul {
     }
 }
 
-
+// Bottom Footer
 #footer-wrapper {
     display: absolute;
     bottom: 0;

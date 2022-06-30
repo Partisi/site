@@ -2,13 +2,14 @@ import React from 'react'
 
 export default function Skills() {
 
-
-    const mySkillCategories = [
-        "frontend",
-        "backend",
-        "blockchain",
-        "data analytics",
-    ]
+    // For future use, if want to organize skills by tech category
+    // const mySkillCategories = [
+    //     "frontend",
+    //     "backend",
+    //     "blockchain",
+    //     "data analytics",
+    // ]
+    
     const mySkills = {
         "languages": [
             { key: "HTML", categories: ["frontend"] },
