@@ -1,14 +1,10 @@
 #intro-container {
-    background-color: $white;
-    
+
     padding-bottom: 128px;
 
-    height: 600px;
+    height: 800px;
+    #intro-text {
+        z-index: 9999999;
 
-    clip-path: polygon(
-        0% 0%,
-        100% 0%,
-        100% calc(100% - 128px),
-        0% 100%
-    );
+    }
 }

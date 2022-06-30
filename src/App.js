@@ -13,7 +13,7 @@ import Work from "./sections/work/Work"
 
 function App() {
   return (
-    <div className="App">
+    <div id="site-container" className="App">
       <article>
         <Intro />
         <Work />
