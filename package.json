@@ -1,7 +1,7 @@
 {
   "name": "erol-website",
   "version": "0.1.0",
-  "homepage": "https://partisi.github.io/site",
+  "homepage": "https://www.erol.ninja",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
