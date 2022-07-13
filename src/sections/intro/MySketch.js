@@ -15,8 +15,8 @@ class Star {
         this.y = p5.random(0, sketchHeight)
 
         // Star movement speed & direction
-        this.xSpeed = p5.random(-0.3, 0.3)
-        this.ySpeed = p5.random(-0.3, 0.3)
+        this.xSpeed = p5.random(-0.15, 0.15)
+        this.ySpeed = p5.random(-0.15, 0.15)
 
         // The 3 possible colors this star can dominate
         let colorCategories = [
