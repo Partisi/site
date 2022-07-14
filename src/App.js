@@ -88,17 +88,6 @@ const Footer = () => {
           </a>
         </li>
       </ul>
-      <div id="math-bottom-wrapper">
-        <p className="math-time">
-          Designed and Coded by Erol with
-
-            </p>
-        <p className="math-formula">
-          <a href="https://www.desmos.com/calculator/lncpsghko4" target="_blank" rel="noreferrer">
-            $$(x^2 + y^2 - 1)^3 = x^2y^3$$
-                </a>
-        </p>
-      </div>
       <p className="copyright-tag"> &#169; by Erol</p>
     </footer>
   )

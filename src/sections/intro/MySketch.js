@@ -15,8 +15,8 @@ class Star {
         this.y = p5.random(0, sketchHeight)
 
         // Star movement speed & direction
-        this.xSpeed = p5.random(-0.15, 0.15)
-        this.ySpeed = p5.random(-0.15, 0.15)
+        this.xSpeed = p5.random(-0.05, 0.05)
+        this.ySpeed = p5.random(-0.05, 0.05)
 
         // The 3 possible colors this star can dominate
         let colorCategories = [
@@ -29,7 +29,7 @@ class Star {
         // note. to get more fancy, can have coords for each color and find closest color to star
         if (this.x < document.getElementById("intro-container").clientWidth / 2) { // if star on left
             this.color = colorCategories[0]
-        } else if (this.y < 300) { // if star top right
+        } else if (this.y < 400) { // if star top right
             this.color = colorCategories[1]
         } else { // bottom right
             this.color = colorCategories[2]

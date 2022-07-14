@@ -7,7 +7,7 @@ export default function Intro() {
         <section id="intro-container" className="section-container">
             <div id="intro-text">
                 <h1>Erol Bickici</h1>
-                <p>Technology, Finance, and all that in between</p>
+                <p>Technology, Finance, and All That in Between</p>
             </div>
             {/* Main Sketch Import (the star animation) */}
             <MySketch />
