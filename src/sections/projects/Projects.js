@@ -39,7 +39,7 @@ export default function Projects() {
             description: "This project was the first purely fun project I worked on being a video game consisting of a story, combat, and exploration.",
             year: "2021",
             toolsUsed: "HTML, CSS, p5.js",
-            redirect: "https://partisi.github.io/tile-game/"
+            redirect: "https://github.com/Partisi/tile-game"
         },
         {
             name: "Industry-Wide Synergetic Map",
