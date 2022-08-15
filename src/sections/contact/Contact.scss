@@ -10,7 +10,7 @@
 
         width: 100%;
         max-width: 800px;
-        min-width: 400px;
+        min-width: calc(400px - 48px);
 
         display: flex;
         flex-direction: row;
