@@ -14,7 +14,7 @@
         justify-content: center;
         align-items: flex-start;
         border-left: 4px solid #42f581;
-        padding: 12px 48px;
+        padding: 12px 120px;
 
         /* From https://css.glass */
         background: rgba(255, 255, 255, 0.1);
@@ -48,14 +48,18 @@
 
             #software-title {
                 color: #f54293;
-                font-weight: bold;
             }
 
             #finance-title {
                 color: #a142f5;
-                font-weight: bold;
+
             }
 
+        }
+
+        .arrow-notch {
+            padding-right: 8px;
+            font-size: 12px;
         }
 
         .text-shuffle {
@@ -74,9 +78,11 @@
             h1 {
                 line-height: 80px;
             }
+
             p {
                 font-size: 24px;
             }
+
             .text-shuffle {
                 font-size: 16px;
             }

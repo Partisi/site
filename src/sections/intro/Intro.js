@@ -27,7 +27,7 @@ export default function Intro() {
                 <h1>Erol Bickici</h1>
                 <p><span id="software-title">Software</span> and <span id="finance-title">Finance</span></p>
                 <TextTransition springConfig={presets.wobbly}>
-                    <p className="text-shuffle"> {TEXTS[index % TEXTS.length]}</p>
+                    <p className="text-shuffle"><span className="arrow-notch">&#10148;</span>{TEXTS[index % TEXTS.length]}</p>
                 </TextTransition>
             </div>
             {/* Main Sketch Import (the star animation) */}
