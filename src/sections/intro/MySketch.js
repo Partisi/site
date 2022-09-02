@@ -29,7 +29,7 @@ class Star {
         // note. to get more fancy, can have coords for each color and find closest color to star
         if (this.x < document.getElementById("intro-container").clientWidth / 2) { // if star on left
             this.color = colorCategories[0]
-        } else if (this.y < 400) { // if star top right
+        } else if (this.y < 500) { // if star top right
             this.color = colorCategories[1]
         } else { // bottom right
             this.color = colorCategories[2]
@@ -55,7 +55,7 @@ class Star {
 
     // Draws the line between points nearby
     connect(p5, allDots) {
-        const dDistance = 200 // distance to start connect
+        const dDistance = 250 // distance to start connect
         const connectedStars = [this.id]
         for (let i = 0; i < allDots.length; i++) {
             let eachDot = allDots[i]
